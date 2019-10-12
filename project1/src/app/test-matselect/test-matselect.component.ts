@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatSelectionList, MatListOption } from '@angular/material';
 
 @Component({
@@ -7,6 +7,8 @@ import { MatSelectionList, MatListOption } from '@angular/material';
   styleUrls: ['./test-matselect.component.css']
 })
 export class TestMatselectComponent implements OnInit {
+  @ViewChild('kenos', {static: true}) kenosSelect !: MatSelectionList;
+
   selectedOptions = [];
   NumList = [
     { name: '1', checked: false },
@@ -27,20 +29,30 @@ export class TestMatselectComponent implements OnInit {
 
   ngOnInit() {
   }
-  Select1(matSelect: MatSelectionList) {
-    // console.log(matSelect.selectedOptions.selected);
+  Select1() {
+    const randoms = ['1', '4', '10'];
+    console.log(this.kenosSelect.selectedOptions.selected);
+    // console.log(this.kenosSelect.selectedOptions.selected);
     // console.log(this.selectedOptions);
-    // console.log('option', matSelect.options);
-    // console.log(matSelect.selectedOptions);
-    matSelect.deselectAll();
-    matSelect.options.forEach(item => {
-      if (item.value.name === '1') {
-        item.selected = true;
-      }
-    });
-    // matSelect.options.map((item, index, arr) => {
-
+    // console.log('option', this.kenosSelect.options);
+    // console.log(this.kenosSelect.selectedOptions);
+    this.kenosSelect.deselectAll();
+    // this.kenosSelect.options.forEach(item => {
+    //   if (item.value.name === '1') {
+    //     item.selected = true;
+    //   }
     // });
+    this.kenosSelect.options.filter((item) => {
+      return randoms.indexOf(item.value.name) !== -1;
+    }).forEach((item) => {
+      item.selected = true;
+    });
+
+    console.log('matSelected', this.kenosSelect.selectedOptions.selected);
+    this.kenosSelect.selectedOptions.selected.forEach((item) => {
+      console.log(item.value);
+    });
+    console.log('this.selectedOptions', this.selectedOptions);
   }
 
 }
