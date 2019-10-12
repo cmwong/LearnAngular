@@ -1,0 +1,15 @@
+<div class="row">
+  <mat-selection-list #selectJackpot>
+    <ng-container>
+      <mat-list-option
+        #keno
+        *ngFor="let item of NumList"
+        [value]="item"
+        [disabled]="selectJackpot.selectedOptions.selected.length > 9 && !keno.selected">
+        {{ item }}
+      </mat-list-option>
+    </ng-container>
+  </mat-selection-list>
+</div>
+<button (click)="PickRandom(4)">PickRandom 4</button>
+<button (click)="PickRandom(10)">PickRandom 10</button>

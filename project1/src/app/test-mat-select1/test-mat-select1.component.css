@@ -1,0 +1,53 @@
+::ng-deep .mat-list-text{
+  position: absolute;
+  text-align: center;
+  font-size: 1rem;
+  padding: 0 !important;
+}
+::ng-deep .mat-list-base .mat-list-item, .mat-list-base .mat-list-option{
+  width: 10%;
+  display: inline-block;
+}
+
+::ng-deep .mat-pseudo-checkbox{
+  width: 50px !important;
+  height: 50px !important;
+  margin-right: 0 !important;
+  border-radius: 30px !important;
+}
+
+::ng-deep .mat-pseudo-checkbox.mat-pseudo-checkbox-checked{
+  background-color: #00aeef !important;
+  border-radius: 30px !important;
+}
+
+::ng-deep .mat-pseudo-checkbox-checked::after{
+  display: none;
+}
+
+.mat-list-option.mat-list-item.mat-list-option{
+  height: 56px !important;
+}
+
+.mat-list-base .mat-list-option{
+  border-radius: 30px;
+}
+
+@media (max-width: 1199px){
+  ::ng-deep .mat-pseudo-checkbox.mat-pseudo-checkbox{
+      width: 45px !important;
+      height: 45px !important;
+  }
+  .mat-list-option.mat-list-item.mat-list-option{
+      height: 63px !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  ::ng-deep .mat-pseudo-checkbox.mat-pseudo-checkbox{
+      width: 35px !important;
+      height: 35px !important;
+  }
+  .mat-list-option.mat-list-item.mat-list-option{
+      height: 35px !important;
+  }
+}

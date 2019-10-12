@@ -7,6 +7,8 @@ import { MatSelectionList, MatListOption } from '@angular/material';
   styleUrls: ['./test-matselect.component.css']
 })
 export class TestMatselectComponent implements OnInit {
+  // using viewchild to access the the matselectionlist component
+  // by id 'kenos'
   @ViewChild('kenos', {static: true}) kenosSelect !: MatSelectionList;
 
   selectedOptions = [];
@@ -29,7 +31,7 @@ export class TestMatselectComponent implements OnInit {
 
   ngOnInit() {
   }
-  Select1() {
+  PickRandom() {
     const randoms = ['1', '4', '10'];
     console.log(this.kenosSelect.selectedOptions.selected);
     // console.log(this.kenosSelect.selectedOptions.selected);

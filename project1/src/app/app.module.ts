@@ -7,11 +7,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TestMatselectComponent } from './test-matselect/test-matselect.component';
 import { FormsModule } from '@angular/forms';
 import { MatSelectModule, MatListModule } from '@angular/material';
+import { TestMatSelect1Component } from './test-mat-select1/test-mat-select1.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TestMatselectComponent
+    TestMatselectComponent,
+    TestMatSelect1Component
   ],
   imports: [
     BrowserModule,
