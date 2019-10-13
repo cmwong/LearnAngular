@@ -1,12 +1,16 @@
 // https://javascript.info/task/shuffle
 export class RandomKenoNumber {
   private num1: Array<number> = [];
-  constructor() {
+  private max = 80;
+  constructor(max?: number) {
+    if (max !== undefined) {
+      this.max = max;
+    }
     this.initArray();
   }
   private initArray(): void {
     this.num1 = [];
-    for (let i = 1; i <= 80; i++) {
+    for (let i = 1; i <= this.max; i++) {
       this.num1.push(i);
     }
     this._shuffle(this.num1);
@@ -26,6 +30,9 @@ export class RandomKenoNumber {
     this._shuffle(this.num1);
   }
   public getRandomNumber(howMany: number): Array<number> {
+    if (howMany > this.max) {
+      return [];
+    }
     if (this.num1.length >= howMany) {
       return this.num1.splice(0, howMany);
     } else {

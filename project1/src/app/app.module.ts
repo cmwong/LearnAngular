@@ -8,12 +8,14 @@ import { TestMatselectComponent } from './test-matselect/test-matselect.componen
 import { FormsModule } from '@angular/forms';
 import { MatSelectModule, MatListModule } from '@angular/material';
 import { TestMatSelect1Component } from './test-mat-select1/test-mat-select1.component';
+import { RxjsComponent } from './rxjs/rxjs.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TestMatselectComponent,
-    TestMatSelect1Component
+    TestMatSelect1Component,
+    RxjsComponent
   ],
   imports: [
     BrowserModule,

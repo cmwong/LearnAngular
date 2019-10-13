@@ -11,9 +11,10 @@ export class TestMatSelect1Component implements OnInit {
   @ViewChild('selectJackpot', {static: true}) selectJackpot !: MatSelectionList;
   constructor() { }
   NumList = [];
-  rnd = new RandomKenoNumber();
+  max = 20;
+  rnd = new RandomKenoNumber(this.max);
   ngOnInit() {
-    for (let i = 1; i <= 80; i++) {
+    for (let i = 1; i <= this.max; i++) {
       this.NumList.push(i);
     }
   }
@@ -25,8 +26,10 @@ export class TestMatSelect1Component implements OnInit {
     // console.log(this.selectJackpot.selectedOptions.selected);
     this.selectJackpot.deselectAll();
     this.selectJackpot.options.filter((item) => {
+      // only want item value that is in the randoms list
       return randoms.indexOf(item.value) !== -1;
     }).forEach((item) => {
+      // set the matListOption.selected to true
       item.selected = true;
     });
 
